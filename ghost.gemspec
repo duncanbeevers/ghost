@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.summary = %q{Allows you to create, list, and modify local hostnames}
   s.description = %q{Allows you to create, list, and modify local hostnames by managing the /etc/hosts file or through the Directory Service on Mac OSX}
 
-  spec.add_development_dependency 'rspec', '= 1.3.2'
+  s.add_development_dependency 'rspec', '= 1.3.2'
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
