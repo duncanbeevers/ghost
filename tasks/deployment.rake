@@ -1,28 +1,34 @@
 require File.dirname(__FILE__) + '/rake_helper'
 
-GEM = "ghost"
+GEM         = "ghost"
 GEM_VERSION = [0,2,8]
-AUTHOR = "Bodaniel Jeanes"
-EMAIL = "me@bjeanes.com"
-HOMEPAGE = "http://github.com/bjeanes/ghost"
-SUMMARY = "Allows you to create, list, and modify local hostnames"
+AUTHOR      = "Bodaniel Jeanes"
+EMAIL       = "me@bjeanes.com"
+HOMEPAGE    = "http://github.com/bjeanes/ghost"
+SUMMARY     = "Allows you to create, list, and modify local hostnames"
+DESCRIPTION = SUMMARY + " by managing the /etc/hosts file or through the Directory Service on Mac OS"
 
 spec = Gem::Specification.new do |s|
-  s.name = GEM
+  s.name              = GEM
   s.rubyforge_project = GEM
-  s.version = GEM_VERSION.join('.')
-  s.has_rdoc = true
-  s.extra_rdoc_files = ["README", "LICENSE", 'TODO']
-  s.rdoc_options << '--line-numbers'
-  s.summary = SUMMARY
-  s.description = s.summary
-  s.author = AUTHOR
-  s.email = EMAIL
-  s.homepage = HOMEPAGE
+  s.version           = GEM_VERSION.join('.')
+
+  s.has_rdoc          = true
+  s.extra_rdoc_files  = ["README", "LICENSE", 'TODO']
+  s.rdoc_options      << '--line-numbers'
+
+  s.summary     = SUMMARY
+  s.description = DESCRIPTION
+  s.author      = AUTHOR
+  s.email       = EMAIL
+  s.homepage    = HOMEPAGE
+
   s.executables << 'ghost'
   s.executables << 'ghost-ssh'
-  s.autorequire = GEM
-  s.files = %w(LICENSE README Rakefile TODO) + Dir.glob("{bin,lib,spec}/**/*")
+  s.files = %w(LICENSE README Rakefile TODO) + Dir.glob("{bin,lib}/**/*")
+  s.test_files = Dir.glob("{spec/**/*")
+
+  s.add_development_dependency('rspec', '= 1.3.2')
 end
 
 Gem::PackageTask.new(spec) do |pkg|

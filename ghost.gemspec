@@ -9,7 +9,6 @@ Gem::Specification.new do |s|
   s.require = %q{ghost}
   s.date = %q{2010-05-25}
   s.default_executable = %q{ghost}
-  s.description = %q{Allows you to create, list, and modify local hostnames}
   s.email = %q{me@bjeanes.com}
   s.executables = ["ghost", "ghost-ssh"]
   s.extra_rdoc_files = ["README", "LICENSE", "TODO"]
@@ -21,6 +20,7 @@ Gem::Specification.new do |s|
   s.rubyforge_project = %q{ghost}
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{Allows you to create, list, and modify local hostnames}
+  s.description = %q{Allows you to create, list, and modify local hostnames by managing the /etc/hosts file or through the Directory Service on Mac OSX}
 
   spec.add_development_dependency 'rspec', '= 1.3.2'
 
