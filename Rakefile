@@ -3,8 +3,10 @@ require 'rubygems/package_task'
 require 'rubygems/specification'
 require 'date'
 
-Dir['tasks/**/*.rake'].each { |rake| load rake }
-
+Dir[File.join(
+  File.expand_path(File.dirname(__FILE__)),
+  'tasks/**/*.rake'
+)].each { |rake| load rake }
 
 #### MISC TASKS ####
 
