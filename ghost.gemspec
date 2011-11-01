@@ -13,13 +13,16 @@ Gem::Specification.new do |s|
   s.email = %q{me@bjeanes.com}
   s.executables = ["ghost", "ghost-ssh"]
   s.extra_rdoc_files = ["README", "LICENSE", "TODO"]
-  s.files = ["LICENSE", "README", "Rakefile", "TODO", "bin/ghost", "lib/ghost", "lib/ghost/linux-host.rb", "lib/ghost/mac-host.rb", "lib/ghost.rb", "spec/etc_hosts_spec.rb", "spec/ghost_spec.rb", "spec/spec.opts", "spec/spec_helper.rb"]
+  s.files = ["LICENSE", "README", "Rakefile", "TODO", "bin/ghost", "lib/ghost", "lib/ghost/linux-host.rb", "lib/ghost/mac-host.rb", "lib/ghost.rb"]
+  s.test_files = ["spec/etc_hosts_spec.rb", "spec/ghost_spec.rb", "spec/spec.opts", "spec/spec_helper.rb"]
   s.homepage = %q{http://github.com/bjeanes/ghost}
   s.rdoc_options = ["--line-numbers"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{ghost}
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{Allows you to create, list, and modify local hostnames}
+
+  spec.add_development_dependency 'rspec', '= 1.3.2'
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
